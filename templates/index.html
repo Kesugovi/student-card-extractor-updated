@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Card PDF → Excel Extractor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Student Detail Card Extractor</h1>
+    <p>Upload a scanned PDF of student card(s). Gemini reads the PDF directly
+       (no image conversion) and extracts the handwritten fields into an
+       Excel file you can download — one row per page/record.</p>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for m in messages %}<li>{{ m }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".pdf" required>
+      <button type="submit">Extract & Download Excel</button>
+    </form>
+  </div>
+</body>
+</html>
