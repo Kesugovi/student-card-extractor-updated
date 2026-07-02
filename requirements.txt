@@ -1,4 +1,6 @@
-flask
-google-generativeai
-openpyxl
+Flask
+google-genai
 python-dotenv
+openpyxl
+gunicorn
+Werkzeug
