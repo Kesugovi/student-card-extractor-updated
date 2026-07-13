@@ -95,6 +95,7 @@ FIELDS = [
     "Name",
     "Class",
     "Admission Number",
+    "phone Number",
     "Date of Birth",
     "Blood Group",
     "Birth Place",
